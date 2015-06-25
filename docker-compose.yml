@@ -1,12 +1,11 @@
 pgdatabase:
-   image:  postgres
-   environment:
-    - POSTGRES_PASSWORD=secret
-
+  image: postgres:latest
+  environment:
+   - POSTGRES_PASSWORD=secret
 pushy:
   image: lordhackalot/test-pushy
   ports:
-    - "3000:3000"
- links:
+    - 3000:3000
+  links:
     - pgdatabase:database
 
